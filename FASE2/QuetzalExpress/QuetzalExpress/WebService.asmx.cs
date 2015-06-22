@@ -19,12 +19,7 @@ namespace QuetzalExpress
     public class WebService : System.Web.Services.WebService
     {
 
-        [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
-        }
-
+      
         [WebMethod]
         public void Insert_Usuario(string login, string pass, string nombre, string apellido, string dpi, string tefelono, string direccion, string email)
         {
@@ -50,10 +45,38 @@ namespace QuetzalExpress
                     {
                         conn.Close();
                     }
-                 }            
-              
+                 }               
         }
 
-        
+
+        [WebMethod]
+        public int rol(string login)
+        {
+
+            int resultado;
+            string connStr = "server=MOISES;integrated security=true;database=QuetzalExpress";
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                
+                SqlCommand cmd = new SqlCommand("SELECT rol FROM USUARIO WHERE login = '" + login + "'", conn);
+
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                
+                if (reader.Read())
+                {
+                    resultado =  Convert.ToInt32(reader["rol"]);
+
+                }
+                else
+                {
+                    resultado = 0;
+                }
+                conn.Close();
+                return resultado;
+
+            }
+        }
     }
 }

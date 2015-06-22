@@ -157,7 +157,10 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\PrincipalAdministrador.aspx" />
     <Content Include="Account\PrincipalCliente.aspx" />
+    <Content Include="Account\PrincipalDirector.aspx" />
+    <Content Include="Account\PrincipalEmpleado.aspx" />
     <Content Include="Account\RegistrarUsuario.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -174,10 +177,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="Service References\ServicioWebCliente\QuetzalExpress.ServicioWebCliente.HelloWorldResponse.datasource">
+    <Content Include="Service References\ServicioWebCliente\QuetzalExpress.ServicioWebCliente.Insert_UsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\ServicioWebCliente\QuetzalExpress.ServicioWebCliente.Insert_UsuarioResponse.datasource">
+    <Content Include="Service References\ServicioWebCliente\QuetzalExpress.ServicioWebCliente.rolResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ServicioWebCliente\WebService.disco" />
@@ -230,6 +233,9 @@
     <Content Include="Site.Mobile.Master" />
     <Content Include="SiteCliente.Master" />
     <None Include="Service References\ServicioWebCliente\WebService.wsdl" />
+    <Content Include="SiteAdministrador.Master" />
+    <Content Include="SiteEmpleado.Master" />
+    <Content Include="SiteDirector.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -301,12 +307,33 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Account\PrincipalAdministrador.aspx.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PrincipalAdministrador.aspx.designer.cs">
+      <DependentUpon>PrincipalAdministrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\PrincipalCliente.aspx.cs">
       <DependentUpon>PrincipalCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\PrincipalCliente.aspx.designer.cs">
       <DependentUpon>PrincipalCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PrincipalDirector.aspx.cs">
+      <DependentUpon>PrincipalDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PrincipalDirector.aspx.designer.cs">
+      <DependentUpon>PrincipalDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PrincipalEmpleado.aspx.cs">
+      <DependentUpon>PrincipalEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PrincipalEmpleado.aspx.designer.cs">
+      <DependentUpon>PrincipalEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
@@ -399,12 +426,30 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="SiteAdministrador.Master.cs">
+      <DependentUpon>SiteAdministrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteAdministrador.Master.designer.cs">
+      <DependentUpon>SiteAdministrador.Master</DependentUpon>
+    </Compile>
     <Compile Include="SiteCliente.Master.cs">
       <DependentUpon>SiteCliente.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SiteCliente.Master.designer.cs">
       <DependentUpon>SiteCliente.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteDirector.Master.cs">
+      <DependentUpon>SiteDirector.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteDirector.Master.designer.cs">
+      <DependentUpon>SiteDirector.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteEmpleado.Master.cs">
+      <DependentUpon>SiteEmpleado.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteEmpleado.Master.designer.cs">
+      <DependentUpon>SiteEmpleado.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

@@ -25,37 +25,62 @@ namespace QuetzalExpress.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (IsValid)
-            {
-                // Validar la contraseña del usuario
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
-                // Esto no cuenta los errores de inicio de sesión hacia el bloqueo de cuenta
-                // Para habilitar los errores de contraseña para desencadenar el bloqueo, cambie a shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+            ServicioWebCliente.WebServiceSoapClient ws = new ServicioWebCliente.WebServiceSoapClient();
 
-                switch (result)
-                {
-                    case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        break;
-                    case SignInStatus.LockedOut:
-                        Response.Redirect("/Account/Lockout");
-                        break;
-                    case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
-                        break;
-                    case SignInStatus.Failure:
-                    default:
-                        FailureText.Text = "Intento de inicio de sesión no válido";
-                        ErrorMessage.Visible = true;
-                        break;
-                }
-            }
+            switch(ws.rol(usuario.Text)){
+                case 1:
+                    Response.Redirect("PrincipalAdministrador.aspx");
+                    break;
+                case 2:
+                    Response.Redirect("PrincipalDirector.aspx");
+                    break;
+                case 3:
+                    Response.Redirect("PrincipalEmpleado.aspx");
+                    break;
+                case 4:
+                    Response.Redirect("PrincipalCliente.aspx");
+                    break;
+                default:
+                    Response.Redirect("Login.aspx");
+                    break;
+
+          } 
+            
+            
+
+
+            //if (IsValid)
+            //{
+            //    // Validar la contraseña del usuario
+            //    var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            //    var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+
+            //    // Esto no cuenta los errores de inicio de sesión hacia el bloqueo de cuenta
+            //    // Para habilitar los errores de contraseña para desencadenar el bloqueo, cambie a shouldLockout: true
+            //    var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+
+            //    switch (result)
+            //    {
+            //        case SignInStatus.Success:
+            //            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            //            break;
+            //        case SignInStatus.LockedOut:
+            //            Response.Redirect("/Account/Lockout");
+            //            break;
+            //        case SignInStatus.RequiresVerification:
+            //            Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
+            //                                            Request.QueryString["ReturnUrl"],
+            //                                            RememberMe.Checked),
+            //                              true);
+            //            break;
+            //        case SignInStatus.Failure:
+            //        default:
+            //            FailureText.Text = "Intento de inicio de sesión no válido";
+            //            ErrorMessage.Visible = true;
+            //            break;
+            //    }
+            //}
         }
     }
 }

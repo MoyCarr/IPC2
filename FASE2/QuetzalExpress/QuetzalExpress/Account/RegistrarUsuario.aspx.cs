@@ -17,9 +17,7 @@ namespace QuetzalExpress.Account
             ServicioWebCliente.WebServiceSoapClient ws = new ServicioWebCliente.WebServiceSoapClient();
             ws.Insert_Usuario(txtUsuario.Text, txtPassword.Text, txtNombre.Text, txtApellido.Text, txtDpi.Text, txtTelefono.Text, txtDireccion.Text, txtEmail.Text);
 
-      
-            
-            
+ 
         }
     }
 }

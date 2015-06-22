@@ -15,80 +15,19 @@ namespace QuetzalExpress.ServicioWebCliente {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost/WebService", ConfigurationName="ServicioWebCliente.WebServiceSoap")]
     public interface WebServiceSoap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://localhost/WebService is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/HelloWorld", ReplyAction="*")]
-        QuetzalExpress.ServicioWebCliente.HelloWorldResponse HelloWorld(QuetzalExpress.ServicioWebCliente.HelloWorldRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.HelloWorldResponse> HelloWorldAsync(QuetzalExpress.ServicioWebCliente.HelloWorldRequest request);
-        
         // CODEGEN: Generating message contract since element name login from namespace http://localhost/WebService is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/Insert_Usuario", ReplyAction="*")]
         QuetzalExpress.ServicioWebCliente.Insert_UsuarioResponse Insert_Usuario(QuetzalExpress.ServicioWebCliente.Insert_UsuarioRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/Insert_Usuario", ReplyAction="*")]
         System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.Insert_UsuarioResponse> Insert_UsuarioAsync(QuetzalExpress.ServicioWebCliente.Insert_UsuarioRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://localhost/WebService", Order=0)]
-        public QuetzalExpress.ServicioWebCliente.HelloWorldRequestBody Body;
+        // CODEGEN: Generating message contract since element name login from namespace http://localhost/WebService is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/rol", ReplyAction="*")]
+        QuetzalExpress.ServicioWebCliente.rolResponse rol(QuetzalExpress.ServicioWebCliente.rolRequest request);
         
-        public HelloWorldRequest() {
-        }
-        
-        public HelloWorldRequest(QuetzalExpress.ServicioWebCliente.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://localhost/WebService", Order=0)]
-        public QuetzalExpress.ServicioWebCliente.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(QuetzalExpress.ServicioWebCliente.HelloWorldResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost/WebService")]
-    public partial class HelloWorldResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody() {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebService/rol", ReplyAction="*")]
+        System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.rolResponse> rolAsync(QuetzalExpress.ServicioWebCliente.rolRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -180,6 +119,74 @@ namespace QuetzalExpress.ServicioWebCliente {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class rolRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="rol", Namespace="http://localhost/WebService", Order=0)]
+        public QuetzalExpress.ServicioWebCliente.rolRequestBody Body;
+        
+        public rolRequest() {
+        }
+        
+        public rolRequest(QuetzalExpress.ServicioWebCliente.rolRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost/WebService")]
+    public partial class rolRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string login;
+        
+        public rolRequestBody() {
+        }
+        
+        public rolRequestBody(string login) {
+            this.login = login;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class rolResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="rolResponse", Namespace="http://localhost/WebService", Order=0)]
+        public QuetzalExpress.ServicioWebCliente.rolResponseBody Body;
+        
+        public rolResponse() {
+        }
+        
+        public rolResponse(QuetzalExpress.ServicioWebCliente.rolResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost/WebService")]
+    public partial class rolResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int rolResult;
+        
+        public rolResponseBody() {
+        }
+        
+        public rolResponseBody(int rolResult) {
+            this.rolResult = rolResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceSoapChannel : QuetzalExpress.ServicioWebCliente.WebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -205,29 +212,6 @@ namespace QuetzalExpress.ServicioWebCliente {
         
         public WebServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        QuetzalExpress.ServicioWebCliente.HelloWorldResponse QuetzalExpress.ServicioWebCliente.WebServiceSoap.HelloWorld(QuetzalExpress.ServicioWebCliente.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
-        }
-        
-        public string HelloWorld() {
-            QuetzalExpress.ServicioWebCliente.HelloWorldRequest inValue = new QuetzalExpress.ServicioWebCliente.HelloWorldRequest();
-            inValue.Body = new QuetzalExpress.ServicioWebCliente.HelloWorldRequestBody();
-            QuetzalExpress.ServicioWebCliente.HelloWorldResponse retVal = ((QuetzalExpress.ServicioWebCliente.WebServiceSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.HelloWorldResponse> QuetzalExpress.ServicioWebCliente.WebServiceSoap.HelloWorldAsync(QuetzalExpress.ServicioWebCliente.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.HelloWorldResponse> HelloWorldAsync() {
-            QuetzalExpress.ServicioWebCliente.HelloWorldRequest inValue = new QuetzalExpress.ServicioWebCliente.HelloWorldRequest();
-            inValue.Body = new QuetzalExpress.ServicioWebCliente.HelloWorldRequestBody();
-            return ((QuetzalExpress.ServicioWebCliente.WebServiceSoap)(this)).HelloWorldAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -266,6 +250,31 @@ namespace QuetzalExpress.ServicioWebCliente {
             inValue.Body.direccion = direccion;
             inValue.Body.email = email;
             return ((QuetzalExpress.ServicioWebCliente.WebServiceSoap)(this)).Insert_UsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuetzalExpress.ServicioWebCliente.rolResponse QuetzalExpress.ServicioWebCliente.WebServiceSoap.rol(QuetzalExpress.ServicioWebCliente.rolRequest request) {
+            return base.Channel.rol(request);
+        }
+        
+        public int rol(string login) {
+            QuetzalExpress.ServicioWebCliente.rolRequest inValue = new QuetzalExpress.ServicioWebCliente.rolRequest();
+            inValue.Body = new QuetzalExpress.ServicioWebCliente.rolRequestBody();
+            inValue.Body.login = login;
+            QuetzalExpress.ServicioWebCliente.rolResponse retVal = ((QuetzalExpress.ServicioWebCliente.WebServiceSoap)(this)).rol(inValue);
+            return retVal.Body.rolResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.rolResponse> QuetzalExpress.ServicioWebCliente.WebServiceSoap.rolAsync(QuetzalExpress.ServicioWebCliente.rolRequest request) {
+            return base.Channel.rolAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<QuetzalExpress.ServicioWebCliente.rolResponse> rolAsync(string login) {
+            QuetzalExpress.ServicioWebCliente.rolRequest inValue = new QuetzalExpress.ServicioWebCliente.rolRequest();
+            inValue.Body = new QuetzalExpress.ServicioWebCliente.rolRequestBody();
+            inValue.Body.login = login;
+            return ((QuetzalExpress.ServicioWebCliente.WebServiceSoap)(this)).rolAsync(inValue);
         }
     }
 }
